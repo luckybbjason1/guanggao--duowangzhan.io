@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo | Earn Up to 16% APY on Your Crypto</title>
+    <meta name="description" content="Nexo - The world's leading regulated digital assets institution. Earn up to 16% interest on crypto. Instant credit lines. $375M insurance. Join 7M+ users.">
+    <meta name="keywords" content="Nexo, crypto interest, Bitcoin interest, earn crypto, crypto savings, Nexo referral, hdby9kpwsb, passive income crypto, DeFi savings">
+
+    <meta property="og:title" content="Nexo | Your Crypto Deserves Better Returns">
+    <meta property="og:description" content="Earn up to 16% APY on Bitcoin, Ethereum, and stablecoins. Regulated. Insured. Trusted by 7M+ users.">
+    <meta property="og:image" content="https://nexo.com/media/pages/home/nexo-og.jpg">
+
+    <link rel="alternate" hreflang="en" href="?lang=en">
+    <link rel="alternate" hreflang="zh" href="?lang=zh">
+    <link rel="alternate" hreflang="ko" href="?lang=ko">
+    <link rel="alternate" hreflang="vi" href="?lang=vi">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1E4DD8;
+            --primary-light: #4169E1;
+            --accent: #00D395;
+            --dark: #0A1628;
+            --dark-light: #152238;
+            --white: #FFFFFF;
+            --gray: #8892A4;
+            --gradient: linear-gradient(135deg, #1E4DD8 0%, #00D395 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(30, 77, 216, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 80%, rgba(0, 211, 149, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Nav */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 15px;
+        }
+
+        .lang-switch a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .lang-switch a:hover, .lang-switch a.active { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(0, 211, 149, 0.1);
+            border: 1px solid rgba(0, 211, 149, 0.3);
+            border-radius: 50px;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: 60px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(30, 77, 216, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* APY Cards */
+        .apy-section {
+            padding: 100px 40px;
+        }
+
+        .apy-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .apy-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .apy-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .apy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .apy-card {
+            background: var(--dark-light);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s;
+        }
+
+        .apy-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-light);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .apy-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .apy-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .apy-rate {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .apy-rate span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .features-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature {
+            padding: 40px;
+            background: var(--dark-light);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Trust */
+        .trust {
+            padding: 100px 40px;
+            text-align: center;
+            background: var(--dark-light);
+        }
+
+        .trust h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 60px;
+        }
+
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .trust-stat {
+            text-align: center;
+        }
+
+        .trust-stat-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .trust-stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        /* Steps */
+        .steps {
+            padding: 100px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .steps-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .steps-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .step {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 150px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 25px;
+        }
+
+        .final-cta p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .referral-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 40px;
+            background: rgba(0, 211, 149, 0.1);
+            border: 1px solid rgba(0, 211, 149, 0.3);
+            border-radius: 16px;
+            margin-top: 30px;
+        }
+
+        .referral-box span {
+            color: var(--gray);
+        }
+
+        .referral-box code {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 13px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .apy-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: 1fr; }
+            .trust-stats { gap: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            .nav { padding: 15px 20px; }
+            .hero { padding: 100px 20px 60px; }
+            .apy-grid { grid-template-columns: 1fr; }
+            .step { flex-direction: column; gap: 15px; }
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="logo">NE<span>X</span>O</div>
+        <div class="lang-switch">
+            <a href="javascript:void(0)" onclick="setLanguage('en')" class="active">EN</a>
+            <a href="javascript:void(0)" onclick="setLanguage('zh')">中文</a>
+            <a href="javascript:void(0)" onclick="setLanguage('ko')">한국어</a>
+            <a href="javascript:void(0)" onclick="setLanguage('vi')">Tiếng Việt</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge" data-i18n="hero-badge">$375M Insurance Coverage</div>
+            <h1 data-i18n="hero-title">Your Crypto Should<br>Work <span class="highlight">As Hard As You</span></h1>
+            <p class="hero-desc" data-i18n="hero-desc">Earn up to 16% APY on Bitcoin, Ethereum, stablecoins, and 60+ assets. Regulated, insured, and trusted by 7 million users in 200+ countries.</p>
+
+            <div class="hero-cta">
+                <a href="https://nexo.com/ref/hdby9kpwsb?src=web-link" class="btn btn-primary" target="_blank" rel="noopener">
+                    <span data-i18n="cta-start">Start Earning Now</span>
+                </a>
+                <a href="#apy" class="btn btn-secondary" data-i18n="cta-rates">View Rates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- APY Cards -->
+    <section class="apy-section" id="apy">
+        <div class="apy-header reveal">
+            <h2 data-i18n="apy-title">Earn While You Hold</h2>
+            <p data-i18n="apy-desc">Daily interest payouts. No lock-up periods. Withdraw anytime.</p>
+        </div>
+
+        <div class="apy-grid">
+            <div class="apy-card reveal">
+                <div class="apy-icon">₿</div>
+                <div class="apy-name">Bitcoin</div>
+                <div class="apy-rate">8% <span>APY</span></div>
+            </div>
+            <div class="apy-card reveal">
+                <div class="apy-icon">Ξ</div>
+                <div class="apy-name">Ethereum</div>
+                <div class="apy-rate">8% <span>APY</span></div>
+            </div>
+            <div class="apy-card reveal">
+                <div class="apy-icon">$</div>
+                <div class="apy-name">USDT/USDC</div>
+                <div class="apy-rate">16% <span>APY</span></div>
+            </div>
+            <div class="apy-card reveal">
+                <div class="apy-icon">◎</div>
+                <div class="apy-name">Solana</div>
+                <div class="apy-rate">10% <span>APY</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="features-header reveal">
+            <h2 data-i18n="features-title">Built for Peace of Mind</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature reveal">
+                <div class="feature-icon">🛡️</div>
+                <h3 data-i18n="f1-title">$375M Insurance</h3>
+                <p data-i18n="f1-desc">Your assets are protected by a $375 million insurance policy from leading global insurers. Security isn't optional — it's foundational.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">📜</div>
+                <h3 data-i18n="f2-title">Fully Regulated</h3>
+                <p data-i18n="f2-desc">Licensed and regulated across multiple jurisdictions. We maintain the same compliance standards as traditional banks.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">⚡</div>
+                <h3 data-i18n="f3-title">Instant Access</h3>
+                <p data-i18n="f3-desc">No lock-up periods, no withdrawal fees. Access your crypto 24/7. Your money, your control — always.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">💳</div>
+                <h3 data-i18n="f4-title">Instant Crypto Credit</h3>
+                <p data-i18n="f4-desc">Borrow against your crypto without selling. Get instant credit lines starting from 0% APR with flexible repayment.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">📊</div>
+                <h3 data-i18n="f5-title">Daily Payouts</h3>
+                <p data-i18n="f5-desc">Watch your balance grow every day. Interest is calculated and paid out daily — compound your earnings automatically.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">🌐</div>
+                <h3 data-i18n="f6-title">60+ Assets</h3>
+                <p data-i18n="f6-desc">Earn on Bitcoin, Ethereum, stablecoins, and 60+ other cryptocurrencies. Diversify your portfolio, maximize your returns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="trust reveal">
+        <h2 data-i18n="trust-title">Trusted by Millions</h2>
+        <div class="trust-stats">
+            <div class="trust-stat">
+                <div class="trust-stat-value">7M+</div>
+                <div class="trust-stat-label" data-i18n="trust-users">Users Worldwide</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-stat-value">$12B+</div>
+                <div class="trust-stat-label" data-i18n="trust-aum">Assets Under Management</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-stat-value">200+</div>
+                <div class="trust-stat-label" data-i18n="trust-countries">Countries Supported</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-stat-value">$375M</div>
+                <div class="trust-stat-label" data-i18n="trust-insurance">Insurance Coverage</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="steps">
+        <div class="steps-header reveal">
+            <h2 data-i18n="steps-title">Start Earning in 3 Minutes</h2>
+        </div>
+
+        <div class="step-list">
+            <div class="step reveal">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h3 data-i18n="s1-title">Create Your Account</h3>
+                    <p data-i18n="s1-desc">Sign up with email, complete quick verification, and you're in. The whole process takes just minutes.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h3 data-i18n="s2-title">Deposit Your Crypto</h3>
+                    <p data-i18n="s2-desc">Transfer Bitcoin, Ethereum, stablecoins, or any of 60+ supported assets. No minimum deposit required.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h3 data-i18n="s3-title">Watch Your Balance Grow</h3>
+                    <p data-i18n="s3-desc">Start earning immediately. Interest is calculated daily and paid out to your account. No action required — it's automatic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta reveal">
+        <h2 data-i18n="final-title">Stop Letting Your Crypto Sit Idle</h2>
+        <p data-i18n="final-desc">Join 7 million users earning passive income on their crypto holdings. It's free to start, and your first deposit earns interest within 24 hours.</p>
+
+        <a href="https://nexo.com/ref/hdby9kpwsb?src=web-link" class="btn btn-primary" target="_blank" rel="noopener" style="font-size: 18px; padding: 22px 50px;">
+            <span data-i18n="final-btn">Start Earning Today</span>
+        </a>
+
+        <div class="referral-box">
+            <span data-i18n="referral-label">Referral Code:</span>
+            <code>hdby9kpwsb</code>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-i18n="footer">This is an independent referral guide. Nexo is a registered trademark. Cryptocurrency investments are subject to market risks. Interest rates are variable and may change. Past performance does not guarantee future results. Always do your own research.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "hero-badge": "$375M Insurance Coverage",
+                "hero-title": "Your Crypto Should<br>Work <span class=\"highlight\">As Hard As You</span>",
+                "hero-desc": "Earn up to 16% APY on Bitcoin, Ethereum, stablecoins, and 60+ assets. Regulated, insured, and trusted by 7 million users in 200+ countries.",
+                "cta-start": "Start Earning Now",
+                "cta-rates": "View Rates",
+                "apy-title": "Earn While You Hold",
+                "apy-desc": "Daily interest payouts. No lock-up periods. Withdraw anytime.",
+                "features-title": "Built for Peace of Mind",
+                "f1-title": "$375M Insurance",
+                "f1-desc": "Your assets are protected by a $375 million insurance policy from leading global insurers. Security isn't optional — it's foundational.",
+                "f2-title": "Fully Regulated",
+                "f2-desc": "Licensed and regulated across multiple jurisdictions. We maintain the same compliance standards as traditional banks.",
+                "f3-title": "Instant Access",
+                "f3-desc": "No lock-up periods, no withdrawal fees. Access your crypto 24/7. Your money, your control — always.",
+                "f4-title": "Instant Crypto Credit",
+                "f4-desc": "Borrow against your crypto without selling. Get instant credit lines starting from 0% APR with flexible repayment.",
+                "f5-title": "Daily Payouts",
+                "f5-desc": "Watch your balance grow every day. Interest is calculated and paid out daily — compound your earnings automatically.",
+                "f6-title": "60+ Assets",
+                "f6-desc": "Earn on Bitcoin, Ethereum, stablecoins, and 60+ other cryptocurrencies. Diversify your portfolio, maximize your returns.",
+                "trust-title": "Trusted by Millions",
+                "trust-users": "Users Worldwide",
+                "trust-aum": "Assets Under Management",
+                "trust-countries": "Countries Supported",
+                "trust-insurance": "Insurance Coverage",
+                "steps-title": "Start Earning in 3 Minutes",
+                "s1-title": "Create Your Account",
+                "s1-desc": "Sign up with email, complete quick verification, and you're in. The whole process takes just minutes.",
+                "s2-title": "Deposit Your Crypto",
+                "s2-desc": "Transfer Bitcoin, Ethereum, stablecoins, or any of 60+ supported assets. No minimum deposit required.",
+                "s3-title": "Watch Your Balance Grow",
+                "s3-desc": "Start earning immediately. Interest is calculated daily and paid out to your account. No action required — it's automatic.",
+                "final-title": "Stop Letting Your Crypto Sit Idle",
+                "final-desc": "Join 7 million users earning passive income on their crypto holdings. It's free to start, and your first deposit earns interest within 24 hours.",
+                "final-btn": "Start Earning Today",
+                "referral-label": "Referral Code:",
+                "footer": "This is an independent referral guide. Nexo is a registered trademark. Cryptocurrency investments are subject to market risks. Interest rates are variable and may change. Past performance does not guarantee future results. Always do your own research."
+            },
+            zh: {
+                "hero-badge": "3.75亿美元保险保障",
+                "hero-title": "你的加密货币应该<br><span class=\"highlight\">和你一样努力工作</span>",
+                "hero-desc": "比特币、以太坊、稳定币及60+资产可赚取高达16%年化收益。合规、受保、200+国家700万用户信赖。",
+                "cta-start": "立即开始赚钱",
+                "cta-rates": "查看利率",
+                "apy-title": "持有即可赚钱",
+                "apy-desc": "每日利息支付。无锁定期。随时提取。",
+                "features-title": "为安心而生",
+                "f1-title": "3.75亿美元保险",
+                "f1-desc": "你的资产受到来自全球领先保险公司3.75亿美元保险保障。安全不是可选项——而是基础。",
+                "f2-title": "完全合规",
+                "f2-desc": "在多个司法管辖区获得许可和监管。我们维持与传统银行相同的合规标准。",
+                "f3-title": "即时访问",
+                "f3-desc": "无锁定期，无提现费用。24/7访问你的加密货币。你的钱，你掌控——永远如此。",
+                "f4-title": "即时加密货币信贷",
+                "f4-desc": "无需出售即可抵押你的加密货币借款。获得0%年利率起的即时信用额度，灵活还款。",
+                "f5-title": "每日支付",
+                "f5-desc": "每天看着你的余额增长。利息每日计算并支付到你的账户——自动复利。",
+                "f6-title": "60+资产",
+                "f6-desc": "在比特币、以太坊、稳定币和60+其他加密货币上赚取收益。多元化你的投资组合，最大化你的回报。",
+                "trust-title": "数百万人信赖",
+                "trust-users": "全球用户",
+                "trust-aum": "管理资产",
+                "trust-countries": "覆盖国家",
+                "trust-insurance": "保险保障",
+                "steps-title": "3分钟开始赚钱",
+                "s1-title": "创建账户",
+                "s1-desc": "用邮箱注册，完成快速验证即可。整个过程只需几分钟。",
+                "s2-title": "存入加密货币",
+                "s2-desc": "转入比特币、以太坊、稳定币或60+支持的资产中的任何一种。无最低存款要求。",
+                "s3-title": "看着余额增长",
+                "s3-desc": "立即开始赚钱。利息每日计算并支付到你的账户。无需任何操作——全自动。",
+                "final-title": "别让你的加密货币闲置",
+                "final-desc": "加入700万在加密货币持有中赚取被动收入的用户。免费开始，首次存款24小时内开始赚取利息。",
+                "final-btn": "今天开始赚钱",
+                "referral-label": "推荐码：",
+                "footer": "这是一个独立的推荐指南。Nexo是注册商标。加密货币投资受市场风险影响。利率是可变的，可能会变化。过往表现不保证未来结果。请务必自行研究。"
+            },
+            ko: {
+                "hero-badge": "3억 7,500만 달러 보험 보장",
+                "hero-title": "당신의 암호화폐가<br><span class=\"highlight\">당신만큼 열심히 일해야 합니다</span>",
+                "hero-desc": "비트코인, 이더리움, 스테이블코인 및 60개 이상의 자산에서 최대 16% APY를 획득하세요. 규제, 보험, 200개국 이상 700만 사용자가 신뢰합니다.",
+                "cta-start": "지금 수익 창출 시작",
+                "cta-rates": "요율 보기",
+                "apy-title": "보유하면서 수익 창출",
+                "apy-desc": "매일 이자 지급. 잠금 기간 없음. 언제든지 인출.",
+                "features-title": "안심을 위해 구축됨",
+                "f1-title": "3억 7,500만 달러 보험",
+                "f1-desc": "귀하의 자산은 글로벌 선도 보험사의 3억 7,500만 달러 보험 정책으로 보호됩니다. 보안은 선택 사항이 아닙니다 — 기본입니다.",
+                "f2-title": "완전 규제",
+                "f2-desc": "여러 관할권에서 라이선스 및 규제를 받습니다. 전통적인 은행과 동일한 규정 준수 기준을 유지합니다.",
+                "f3-title": "즉시 액세스",
+                "f3-desc": "잠금 기간 없음, 출금 수수료 없음. 24시간 언제든지 암호화폐에 액세스. 당신의 돈, 당신의 통제 — 항상.",
+                "f4-title": "즉시 암호화폐 신용",
+                "f4-desc": "판매하지 않고 암호화폐를 담보로 대출받으세요. 유연한 상환으로 0% APR부터 시작하는 즉시 신용 한도를 받으세요.",
+                "f5-title": "매일 지급",
+                "f5-desc": "매일 잔액이 늘어나는 것을 보세요. 이자는 매일 계산되어 계정에 지급됩니다 — 자동으로 복리 수익.",
+                "f6-title": "60개 이상 자산",
+                "f6-desc": "비트코인, 이더리움, 스테이블코인 및 60개 이상의 다른 암호화폐에서 수익을 얻으세요. 포트폴리오를 다양화하고 수익을 극대화하세요.",
+                "trust-title": "수백만 명이 신뢰",
+                "trust-users": "전 세계 사용자",
+                "trust-aum": "관리 자산",
+                "trust-countries": "지원 국가",
+                "trust-insurance": "보험 보장",
+                "steps-title": "3분 만에 수익 창출 시작",
+                "s1-title": "계정 만들기",
+                "s1-desc": "이메일로 가입하고 빠른 인증을 완료하면 됩니다. 전체 과정은 몇 분밖에 걸리지 않습니다.",
+                "s2-title": "암호화폐 입금",
+                "s2-desc": "비트코인, 이더리움, 스테이블코인 또는 60개 이상의 지원 자산 중 하나를 전송하세요. 최소 입금 요건 없음.",
+                "s3-title": "잔액 증가 관찰",
+                "s3-desc": "즉시 수익 창출 시작. 이자는 매일 계산되어 계정에 지급됩니다. 별도 조치 필요 없음 — 자동입니다.",
+                "final-title": "암호화폐를 놀리지 마세요",
+                "final-desc": "암호화폐 보유로 수동 소득을 얻는 700만 사용자와 함께하세요. 무료로 시작하고 첫 입금은 24시간 이내에 이자를 받습니다.",
+                "final-btn": "오늘 수익 창출 시작",
+                "referral-label": "추천 코드:",
+                "footer": "이것은 독립적인 추천 가이드입니다. Nexo는 등록 상표입니다. 암호화폐 투자는 시장 위험에 노출됩니다. 이자율은 가변적이며 변경될 수 있습니다. 과거 실적이 미래 결과를 보장하지 않습니다. 항상 직접 조사하세요."
+            },
+            vi: {
+                "hero-badge": "Bảo Hiểm 375 Triệu USD",
+                "hero-title": "Tiền Điện Tử Của Bạn Nên<br><span class=\"highlight\">Làm Việc Chăm Chỉ Như Bạn</span>",
+                "hero-desc": "Kiếm đến 16% APY trên Bitcoin, Ethereum, stablecoin và hơn 60 tài sản. Được quản lý, bảo hiểm và tin tưởng bởi 7 triệu người dùng tại hơn 200 quốc gia.",
+                "cta-start": "Bắt Đầu Kiếm Tiền Ngay",
+                "cta-rates": "Xem Lãi Suất",
+                "apy-title": "Kiếm Tiền Khi Nắm Giữ",
+                "apy-desc": "Trả lãi hàng ngày. Không có thời gian khóa. Rút bất cứ lúc nào.",
+                "features-title": "Được Xây Dựng Cho Sự An Tâm",
+                "f1-title": "Bảo Hiểm 375 Triệu USD",
+                "f1-desc": "Tài sản của bạn được bảo vệ bởi chính sách bảo hiểm 375 triệu đô la từ các công ty bảo hiểm hàng đầu thế giới. Bảo mật không phải tùy chọn — đó là nền tảng.",
+                "f2-title": "Hoàn Toàn Tuân Thủ",
+                "f2-desc": "Được cấp phép và quản lý ở nhiều khu vực pháp lý. Chúng tôi duy trì các tiêu chuẩn tuân thủ như ngân hàng truyền thống.",
+                "f3-title": "Truy Cập Ngay Lập Tức",
+                "f3-desc": "Không có thời gian khóa, không có phí rút tiền. Truy cập tiền điện tử 24/7. Tiền của bạn, bạn kiểm soát — luôn luôn.",
+                "f4-title": "Tín Dụng Crypto Ngay Lập Tức",
+                "f4-desc": "Vay thế chấp bằng tiền điện tử mà không cần bán. Nhận hạn mức tín dụng ngay lập tức từ 0% APR với thanh toán linh hoạt.",
+                "f5-title": "Thanh Toán Hàng Ngày",
+                "f5-desc": "Xem số dư của bạn tăng lên mỗi ngày. Lãi suất được tính và trả hàng ngày vào tài khoản — tự động lãi kép.",
+                "f6-title": "60+ Tài Sản",
+                "f6-desc": "Kiếm tiền trên Bitcoin, Ethereum, stablecoin và hơn 60 loại tiền điện tử khác. Đa dạng hóa danh mục, tối đa hóa lợi nhuận.",
+                "trust-title": "Được Hàng Triệu Người Tin Tưởng",
+                "trust-users": "Người Dùng Toàn Cầu",
+                "trust-aum": "Tài Sản Quản Lý",
+                "trust-countries": "Quốc Gia Hỗ Trợ",
+                "trust-insurance": "Bảo Hiểm",
+                "steps-title": "Bắt Đầu Kiếm Tiền Trong 3 Phút",
+                "s1-title": "Tạo Tài Khoản",
+                "s1-desc": "Đăng ký bằng email, hoàn thành xác minh nhanh và bạn đã vào. Toàn bộ quá trình chỉ mất vài phút.",
+                "s2-title": "Nạp Tiền Điện Tử",
+                "s2-desc": "Chuyển Bitcoin, Ethereum, stablecoin hoặc bất kỳ tài sản nào trong số hơn 60 tài sản được hỗ trợ. Không yêu cầu nạp tối thiểu.",
+                "s3-title": "Xem Số Dư Tăng Lên",
+                "s3-desc": "Bắt đầu kiếm tiền ngay lập tức. Lãi suất được tính hàng ngày và trả vào tài khoản. Không cần hành động — tự động.",
+                "final-title": "Đừng Để Tiền Điện Tử Nhàn Rỗi",
+                "final-desc": "Tham gia 7 triệu người dùng kiếm thu nhập thụ động từ việc nắm giữ tiền điện tử. Bắt đầu miễn phí, tiền nạp đầu tiên kiếm lãi trong vòng 24 giờ.",
+                "final-btn": "Bắt Đầu Kiếm Tiền Hôm Nay",
+                "referral-label": "Mã Giới Thiệu:",
+                "footer": "Đây là hướng dẫn giới thiệu độc lập. Nexo là nhãn hiệu đã đăng ký. Đầu tư tiền điện tử chịu rủi ro thị trường. Lãi suất có thể thay đổi. Hiệu suất quá khứ không đảm bảo kết quả tương lai. Luôn tự nghiên cứu."
+            }
+        };
+
+        function detectLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            if (urlLang && translations[urlLang]) return urlLang;
+            const browserLang = (navigator.language || navigator.userLanguage).split('-')[0].toLowerCase();
+            return translations[browserLang] ? browserLang : 'en';
+        }
+
+        function setLanguage(lang) {
+            if (!translations[lang]) lang = 'en';
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', url);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('.lang-switch a').forEach(a => {
+                a.classList.remove('active');
+                if ((lang === 'en' && a.textContent === 'EN') ||
+                    (lang === 'zh' && a.textContent === '中文') ||
+                    (lang === 'ko' && a.textContent === '한국어') ||
+                    (lang === 'vi' && a.textContent === 'Tiếng Việt')) {
+                    a.classList.add('active');
+                }
+            });
+
+            const t = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.innerHTML = t[key];
+            });
+        }
+
+        function initReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(detectLanguage());
+            initReveal();
+        });
+    </script>
+</body>
+</html>
