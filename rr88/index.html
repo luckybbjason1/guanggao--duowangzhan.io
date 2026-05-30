@@ -872,25 +872,6 @@
     </footer>
 
     <script>
-        // Check language - redirect non-Vietnamese to SuperEX
-        (function() {
-            const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
-            const isVietnamese = browserLang.startsWith('vi');
-            const urlParams = new URLSearchParams(window.location.search);
-            const forceLang = urlParams.get('lang');
-
-            // If not Vietnamese and not forced, show warning
-            if (!isVietnamese && forceLang !== 'vi') {
-                document.body.innerHTML = `
-                    <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; background: #0a0a0a; color: white; font-family: sans-serif;">
-                        <h1 style="font-size: 2rem; margin-bottom: 20px;">🇻🇳 Dành Riêng Cho Người Việt</h1>
-                        <p style="color: #888; margin-bottom: 30px; max-width: 400px;">This content is only available in Vietnamese. Please visit our other platforms for your region.</p>
-                        <a href="../superex/" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600;">Visit SuperEX Instead →</a>
-                    </div>
-                `;
-            }
-        })();
-
         // Create particles
         function createParticles() {
             const container = document.getElementById('particles');
